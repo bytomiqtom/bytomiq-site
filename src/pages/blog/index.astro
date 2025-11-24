@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+// get all posts and sort newest first
+const posts = (await getCollection("posts")).sort((a,b) =>
+  a.data.date < b.data.date ? 1 : -1
+);
+---
+<BaseLayout title="Blog" description="Updates & insights">
+  <ul class="grid gap-6">
+    {posts.map((p) => (
+      <li class="p-6 rounded-2xl bg-neutral-900">
+        <a href={`/blog/${p.slug}/`} class="text-xl font-semibold">{p.data.title}</a>
+        {p.data.description && <p class="mt-1 text-neutral-400">{p.data.description}</p>}
+        <p class="mt-2 text-xs text-neutral-500">{p.data.date}</p>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

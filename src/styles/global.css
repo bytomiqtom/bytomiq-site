@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background-color: #020617;
+}
+
+/* Basic page feel */
+body {
+  @apply bg-bytomiq-bg text-slate-100;
+}
+
+/* Nice scrollbars (optional) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #22d3ee #020617;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #22d3ee;
+  border-radius: 999px;
+}
+
+/* Components + custom classes */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-bytomiq-primary px-5 py-2 text-sm font-semibold tracking-tight text-slate-950 shadow-glow transition
+           hover:-translate-y-0.5 hover:bg-cyan-300 active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-bytomiq-border bg-bytomiq-surface/60 px-5 py-2 text-sm font-semibold tracking-tight text-slate-100 backdrop-blur transition
+           hover:border-bytomiq-primary/60 hover:bg-bytomiq-surface;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-bytomiq-border/60 bg-bytomiq-surface/60 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-bytomiq-muted;
+  }
+
+  .page-shell {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply page-shell border-b border-bytomiq-border/60 py-12 sm:py-16 lg:py-20;
+  }
+
+  .section-title {
+    @apply mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-bytomiq-muted;
+  }
+
+  .section-heading {
+    @apply text-balance text-2xl font-semibold tracking-tight sm:text-3xl;
+  }
+
+  .section-body {
+    @apply mt-3 max-w-2xl text-sm leading-relaxed text-bytomiq-muted;
+  }
+
+  /* Logo grid */
+  .brand-strip {
+    @apply grid gap-6 sm:grid-cols-2;
+  }
+
+  .logo-cell {
+    @apply flex items-center justify-center;
+    height: 150px;
+  }
+
+  .brand-logo {
+    display: block;
+    max-width: 180px;
+    max-height: 110px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-northface {
+    max-width: 180px !important;
+    max-height: 110px !important;
+    filter: invert(1) brightness(1.8) contrast(1.1) !important;
+  }
+
+  .logo-delve {
+    max-width: 200px !important;
+    max-height: 110px !important;
+    filter: invert(1) brightness(1.8) contrast(1.1) !important;
+  }
+
+  .logo-lbrands {
+    max-width: 200px !important;
+    max-height: 110px !important;
+  }
+
+  /* Zero-click / generic graph layout (kept in case you reuse it) */
+  .zero-click-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    border-radius: 1.5rem;
+    background: radial-gradient(circle at top left, #1e1640 0, #050712 55%, #020308 100%);
+    border: 1px solid rgba(124, 247, 255, 0.16);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.9);
+  }
+
+  @media (max-width: 768px) {
+    .zero-click-section {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  .zero-click-graph-card {
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: radial-gradient(circle at bottom, #021318 0, #03040c 55%, #010107 100%);
+  }
+
+  .zero-click-graph-card::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to top, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .zero-click-graph {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .zero-click-curve {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: zero-click-draw 2.4s ease-out forwards;
+  }
+
+  .zero-click-copy {
+    max-width: 520px;
+    color: #f9fafb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  }
+
+  .zero-click-copy .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7cf7ff;
+    margin-bottom: 0.75rem;
+  }
+
+  .zero-click-copy h2 {
+    font-size: clamp(1.9rem, 2.3vw, 2.4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .zero-click-copy p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #d1d5db;
+  }
+
+  .zero-click-copy ul {
+    margin: 1.25rem 0;
+    padding-left: 1.1rem;
+    font-size: 0.96rem;
+    color: #e5e7eb;
+  }
+
+  .zero-click-copy li + li {
+    margin-top: 0.4rem;
+  }
+
+  .zero-click-copy .cta-question {
+    margin-top: 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #f9fafb;
+  }
+
+  .zero-click-copy .cta-question span {
+    color: #ff40d6;
+  }
+
+  /* === HERO GRAPH (services page) === */
+
+  .hero-graph-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: radial-gradient(circle at top left, #111827 0%, #020617 55%, #000000 100%);
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+  }
+
+  /* Inner neon frame */
+  .hero-graph-card::before {
+    content: "";
+    position: absolute;
+    inset: 12%;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(124, 247, 255, 0.7);
+    box-shadow:
+      0 0 20px rgba(34, 211, 238, 0.35),
+      0 0 40px rgba(59, 130, 246, 0.2);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Tron grid overlay */
+  .hero-graph-card::after {
+    content: "";
+    position: absolute;
+    inset: 10%;
+    border-radius: 1.25rem;
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.22) 1px, transparent 1px),
+      linear-gradient(to top, rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.35;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-graph-card svg {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Main curve in hero graph */
+  .graph-curve {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;        /* start fully hidden */
+    animation: drawGraph 1.8s ease-out forwards;
+  }
+  
+
+  /* Arrow animation */
+  .graph-arrow {
+    opacity: 0;
+    animation: showArrow 0.45s ease-out forwards;
+    animation-delay: 1.0s;
+  }  
+}
+
+/* Keyframes */
+
+@keyframes zero-click-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawGraph {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showArrow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

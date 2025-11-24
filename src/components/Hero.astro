@@ -1,0 +1,126 @@
+---
+const stats = [
+  { label: "Enterprise SEO Experience" },
+  { label: "Pages Optimized", value: "400K+" },
+  { label: "AIO / LLM Experiments Tested", value: "45+" },
+];
+---
+
+<section class="relative overflow-hidden border-b border-bytomiq-border/60 bg-gradient-to-b from-bytomiq-bg via-slate-950 to-slate-950">
+  <!-- Glow / gradients -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
+    <div class="absolute right-[-4rem] top-24 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl" />
+    <div class="absolute inset-x-0 bottom-[-1px] h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-70" />
+  </div>
+
+  <div class="relative page-shell flex flex-col gap-10 pb-16 pt-16 sm:pt-20 lg:flex-row lg:items-center lg:gap-16 lg:pb-20">
+    <!-- Left: copy -->
+    <div class="flex-1 space-y-6">
+      <div class="pill">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+        <span>Bytomiq · Pixel-native SEO & growth</span>
+      </div>
+
+      <div class="space-y-4">
+        <h1 class="max-w-xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+          Turn <span class="text-cyan-300">pixels</span> into
+          <span class="text-fuchsia-300"> predictable growth</span>.
+        </h1>
+        <p class="max-w-xl text-sm leading-relaxed text-bytomiq-muted sm:text-base">
+          Bytomiq is an elite performance SEO agency built to win in an AI-first, GEO-powered search landscape.
+Through technical SEO, authoritative content architecture, and predictive analytics, we help brands outrank competitors, future-proof against AIO/LLM disruptions, and scale qualified traffic with precision.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="/contact-us" class="btn-primary">
+          Book a 30-min consultation
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-6 pt-4 text-xs text-bytomiq-muted">
+        {stats.map((stat) => (
+          <div class="flex items-center gap-3 border-l border-bytomiq-border/70 pl-4">
+            <div class="text-sm font-semibold text-slate-100">
+              {stat.value}
+            </div>
+            <div class="max-w-[10rem] text-[11px] uppercase tracking-[0.16em]">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Right: “growth radar” card -->
+    <div class="flex-1">
+      <div class="relative mx-auto max-w-md rounded-3xl border border-bytomiq-border bg-bytomiq-surface/90 p-5 shadow-glow backdrop-blur">
+        <div class="mb-4 flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-bytomiq-muted">
+          <span class="inline-flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>Live growth radar</span>
+          </span>
+          <span>SEO · Content · GEO</span>
+        </div>
+
+        <div class="space-y-4 text-xs">
+          <!-- Top chips -->
+          <div class="flex flex-wrap gap-2">
+            <span class="pill">
+              <span class="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+              Organic visibility ↑
+            </span>
+            <span class="pill">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+              Intent coverage
+            </span>
+            <span class="pill">
+              <span class="h-1.5 w-1.5 rounded-full bg-fuchsia-300" />
+              AIO Coverage
+            </span>
+          </div>
+
+          <!-- Fake chart bars -->
+          <div class="mt-2 space-y-3">
+            <div>
+              <div class="mb-1 flex justify-between text-[11px] text-bytomiq-muted">
+                <span>Non-brand organic sessions</span>
+                <span class="text-emerald-300">+42%</span>
+              </div>
+              <div class="h-2 rounded-full bg-slate-800">
+                <div class="h-2 w-3/4 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400" />
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-1 flex justify-between text-[11px] text-bytomiq-muted">
+                <span>KW visibility</span>
+                <span class="text-cyan-300">+31%</span>
+              </div>
+              <div class="h-2 rounded-full bg-slate-800">
+                <div class="h-2 w-2/3 rounded-full bg-gradient-to-r from-fuchsia-400 to-cyan-400" />
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-1 flex justify-between text-[11px] text-bytomiq-muted">
+                <span>Content ROI clarity</span>
+                <span class="text-emerald-300">Real-time</span>
+              </div>
+              <div class="flex gap-1">
+                <span class="h-6 flex-1 rounded-md bg-slate-800" />
+                <span class="h-6 flex-1 rounded-md bg-slate-800" />
+                <span class="h-6 flex-1 rounded-md bg-gradient-to-tr from-cyan-400/80 to-emerald-400/80" />
+              </div>
+            </div>
+          </div>
+
+          <p class="pt-2 text-[11px] text-bytomiq-muted">
+            Partner with Bytomiq and get one clear, expert-crafted view of the exact moves driving your search growth — cutting through the clutter of dashboards, reports, and overpriced tools.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

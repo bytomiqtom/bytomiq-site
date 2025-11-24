@@ -1,0 +1,78 @@
+---
+import "../styles/global.css";
+
+// Get props from pages using this layout
+const { title, description } = Astro.props;
+
+const pageTitle =
+  title ?? "Bytomiq — Pixels. Systems. Growth.";
+const pageDescription =
+  description ??
+  "Bytomiq is a pixel-native SEO & growth studio turning clean data and sharp execution into predictable outcomes.";
+
+const year = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+
+    <!-- Google Fonts: Monda + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monda:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-bytomiq-bg font-sans text-slate-100 antialiased">
+    <div class="relative isolate flex min-h-screen flex-col">
+      <!-- Header / Nav -->
+      <header class="sticky top-0 z-40 border-b border-bytomiq-border/60 bg-bytomiq-bg/80 backdrop-blur">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+          <a href="/" class="flex items-center gap-3">
+              <img
+              src="/Bytomiq-logo.png"
+              alt="Bytomiq Name"
+                class="h-10 w-auto object-contain"
+              />
+            </a>
+
+          <div class="hidden items-center gap-6 text-lg font-medium text-bytomiq-muted md:flex">
+            <a href="/services" class="hover:text-slate-100">Services</a>
+            <a href="/contact-us" class="hover:text-slate-100">Contact Us</a>
+            <a href="/about" class="hover:text-slate-100">About</a>
+          </div>
+
+          <a
+            href="https://calendly.com/tom-bytomiq/30min"
+            target="_blank"
+            rel="noreferrer"
+            class="btn-primary"
+          >
+            Book a Strategy Call
+          </a>
+        </nav>
+      </header>
+
+      <!-- Main content -->
+      <main class="flex-1">
+        <slot />
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-bytomiq-border/60 bg-bytomiq-bg/90">
+        <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-xs text-bytomiq-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <p>© {year} Bytomiq. All rights reserved.</p>
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="pill">Pixels are aligning…</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

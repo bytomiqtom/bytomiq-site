@@ -1,0 +1,432 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+---
+
+<BaseLayout
+  title="SEO Services — Bytomiq | Technical SEO, Local SEO, Content SEO & GEO Strategy"
+  description="Bytomiq is a pixel-native SEO agency specializing in Technical SEO, Content SEO, Local SEO, and GEO growth systems. We build future-proof roadmaps that compound visibility, trust, and revenue."
+>
+
+<!-- HERO -->
+<section class="section pt20">
+  <div class="page-shell">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT: TEXT -->
+      <div class="space-y-6 max-w-3xl">
+        <p class="pill">
+          <span class="h-1.5 w-1.5 rounded-full bg-cyan-300"></span>
+          SEO Services · Bytomiq
+        </p>
+
+        <h1 class="text-4xl font-semibold tracking-tight text-slate-100 sm:text-5xl">
+          SEO built for <span class="text-cyan-300">impact now</span>
+          and <span class="text-fuchsia-300">compounding growth later</span>.
+        </h1>
+
+        <p class="text-bytomiq-muted text-sm sm:text-base leading-relaxed max-w-xl">
+          Search has changed. Zero-click is rising. AIO/LLM summaries now rewrite
+          how people discover brands — and how visibility compounds.
+          <br><br>
+          We engineer enterprise SEO systems built for today’s SERPs — and the next generation of them.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="/contact-us" class="btn-primary">Request an SEO teardown</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: GRAPH VISUAL -->
+      <div class="hero-graph-card relative p-4 border border-slate-800/40">
+        <svg class="w-full h-auto relative z-[1]" viewBox="0 0 600 360">
+          <defs>
+            <linearGradient id="neonGrad" x1="0%" y1="96%" x2="96%" y2="0%">
+              <stop offset="0%" stop-color="#A43BFF" />
+              <stop offset="50%" stop-color="#FF40D6" />
+              <stop offset="95%" stop-color="#FF6AFB" />
+            </linearGradient>
+
+            <filter id="glow">
+              <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#FF40D6" />
+            </filter>
+          </defs>
+
+          <!-- Growth curve -->
+<path
+id="hero-graph-curve"
+d="M70 290
+   C 170 270 250 235 335 200
+   S 490 120 540 80"
+stroke="url(#neonGrad)"
+stroke-width="8"
+fill="none"
+stroke-linecap="round"
+filter="url(#glow)"
+class="graph-curve"
+/>
+
+<!-- Arrow head (no fixed position; we’ll place it with JS) -->
+<polygon
+id="hero-graph-arrow"
+points="0,0 -17,12 -17,-12"
+fill="#FF6AFB"
+filter="url(#glow)"
+class="graph-arrow"
+/>
+        </svg>
+        <script is:inline>
+          if (typeof window !== "undefined") {
+            const path = document.getElementById("hero-graph-curve");
+            const arrow = document.getElementById("hero-graph-arrow");
+        
+            if (path && arrow && typeof path.getTotalLength === "function") {
+              const updateArrow = () => {
+                const length = path.getTotalLength();
+                const end = path.getPointAtLength(length);
+                const beforeEnd = path.getPointAtLength(length - 2);
+        
+                const angleRad = Math.atan2(end.y - beforeEnd.y, end.x - beforeEnd.x);
+                const angleDeg = (angleRad * 180) / Math.PI;
+        
+                arrow.setAttribute(
+                  "transform",
+                  `translate(${end.x}, ${end.y}) rotate(${angleDeg})`
+                );
+              };
+        
+              updateArrow();
+            }
+          }
+        </script>
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- 4-PILLAR SEO FRAMEWORK SECTION -->
+  <Section
+    eyebrow="Our SEO Framework"
+    title="Four disciplines. One unified growth engine."
+    body="SEO doesn’t work in silos. Technical SEO fuels content. Content fuels GEO and Local. GEO creates opportunities technical teams must support. At Bytomiq, these functions work together — not as separate service lines, but as one system."
+  >
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <Card
+        eyebrow="Technical SEO"
+        title="Infrastructure that search engines trust"
+        body="Crawlability, indexation, site architecture, structured data, Core Web Vitals, log-file analysis, and technical systems designed to scale without regressions."
+      />
+
+      <Card
+        eyebrow="Content SEO"
+        title="Content that matches intent and drives revenue"
+        body="Intent mapping, content hierarchies, topic modeling, content briefs, and on-page optimization that prioritizes work by impact—not guesswork."
+      />
+
+      <Card
+        eyebrow="Local SEO"
+        title="Dominate local and multi-location visibility"
+        body="Google Business Profile optimization, local landing pages, NAP consistency, review engines, and map pack strategies for service-area and brick-and-mortar brands."
+      />
+
+      <Card
+        eyebrow="GEO Expansion"
+        title="Expand into new cities, states, and regions"
+        body="GEO-intent mapping, regional and city-level landing pages, localized keyword clusters, and scalable frameworks for multi-region growth."
+      />
+    </div>
+  </Section>
+
+  <!-- TECHNICAL SEO DETAIL -->
+  <Section
+    id="technical-seo"
+    eyebrow="Technical SEO"
+    title="Technical systems that search — and AI — can trust."
+    body="We engineer the foundation your entire organic program rests on: clean architecture, predictable indexation, Core Web Vitals, and systems that are ready for both traditional search and AI/LLM answer engines."
+  >
+    <div class="grid gap-10 md:grid-cols-2 text-sm text-bytomiq-muted">
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">
+          Where we plug in
+        </p>
+        <ul class="space-y-2">
+          <li>· Full-site technical audits and prioritized roadmaps.</li>
+          <li>· Crawl efficiency, log-file analysis, and indexation safeguards.</li>
+          <li>· Scalable URL and internal linking architecture for growth.</li>
+          <li>· Structured data systems for entity recognition and rich results.</li>
+          <li>· Core Web Vitals and performance tuned for real users, not just lab scores.</li>
+          <li>· Governance so future releases don’t quietly undo today’s wins.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">
+          Built for search & LLMs
+        </p>
+        <p>
+          Search engines and LLMs both need the same thing from your site: a clear, consistent
+          representation of who you are, what you do, and why you’re trusted. We design
+          architecture, schema, and internal links so that crawlers, models, and people all see
+          the same story.
+        </p>
+        <p>
+          Instead of one-off “fixes,” you get technical systems that can be documented, repeated,
+          and extended as your business and site evolve.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CONTENT SEO DETAIL -->
+  <Section
+    id="content-systems"
+    eyebrow="Content systems"
+    title="Content engineered around intent, not guesswork."
+    body="We don’t just publish more pages. We design content systems — hierarchies, briefs, and workflows — that line up with how your customers search and how modern search and AI systems interpret meaning."
+  >
+    <div class="grid gap-10 md:grid-cols-2 text-sm text-bytomiq-muted">
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">
+          How we approach content
+        </p>
+        <ul class="space-y-2">
+          <li>· Intent mapping across the funnel — from discovery to decision.</li>
+          <li>· Topic modeling and entity-aware keyword research.</li>
+          <li>· Content hubs and internal linking that reinforce expertise.</li>
+          <li>· Briefs and playbooks your writers can actually use at scale.</li>
+          <li>· On-page optimization tuned for both rankings and usability.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">
+          Content that feeds AI and humans
+        </p>
+        <p>
+          As AI and LLMs rewrite how users discover answers, the bar for content structure goes up.
+          We focus on clarity of purpose for each page, clean heading and sectioning patterns, and
+          metadata that reinforces your authority — so your content is easy to surface, quote, and
+          summarize by both traditional search and AI systems.
+        </p>
+        <p>
+          The outcome: fewer random acts of content, more pages that demonstrably move the needle.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- EXPERIMENTATION DETAIL -->
+  <Section
+    id="experiments"
+    eyebrow="Experimentation"
+    title="Experiments that turn SEO from a black box into a growth engine."
+    body="We treat SEO like an engineering problem: form a hypothesis, design a clean experiment, ship changes, measure lift, then feed those learnings back into the roadmap."
+  >
+    <div class="grid gap-10 md:grid-cols-2 text-sm text-bytomiq-muted">
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">
+          What we test
+        </p>
+        <ul class="space-y-2">
+          <li>· Template-level changes to layouts, headings, and internal links.</li>
+          <li>· Schema variations and entity-focused optimizations.</li>
+          <li>· Content rewrites vs. net-new creation for impact per page.</li>
+          <li>· Changes to indexation rules, sitemaps, and crawl directives.</li>
+          <li>· AIO/LLM-friendly patterns to understand answer box and summary lift.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">
+          How we use the data
+        </p>
+        <p>
+          We combine experiment results with your analytics, search console data, and market
+          signals to understand where marginal gains are hiding. That lets us prioritize the
+          10–20% of work that will generate the majority of your growth.
+        </p>
+        <p>
+          Instead of “we did SEO tasks this month,” you get a clear, test-backed story of what
+          changed, why it changed, and what we’re doing next.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+ <!-- EXPERIENCE / BRANDS SECTION -->
+<Section
+eyebrow="Experience"
+title="Brands we've supported across our careers"
+body="From enterprise organizations to specialized DTC brands, our team has contributed to SEO programs across a wide range of industries."
+>
+<div class="xp-panel reveal-on-scroll">
+  <!-- Tiny “window” header -->
+  <div class="mb-6 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-bytomiq-muted">
+    <span class="flex items-center gap-2">
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+      Client systems
+    </span>
+    <span class="flex items-center gap-1">
+      <span class="h-1.5 w-1.5 rounded-[2px] bg-slate-500/60"></span>
+      <span class="h-1.5 w-1.5 rounded-[2px] bg-slate-500/60"></span>
+      <span class="h-1.5 w-1.5 rounded-[2px] bg-slate-500/60"></span>
+    </span>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-[minmax(0,3fr),minmax(0,2fr)] items-center">
+    <!-- LOGOS LEFT -->
+    <div class="brand-strip">
+      <div class="logo-cell">
+        <img
+          src="/client-logos/Lowes_Companies_Logo.svg.png"
+          alt="Lowe's"
+          class="brand-logo"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/starbucks-coffee-logo.png"
+          alt="Starbucks"
+          class="brand-logo"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/the-north-face-1-logo-black-and-white.png"
+          alt="The North Face"
+          class="brand-logo logo-northface"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/Vans-Logo-PNG-Isolated-HD.png"
+          alt="Vans"
+          class="brand-logo"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/Delve-logo-press-release.png"
+          alt="Delve"
+          class="brand-logo logo-delve"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/l-brands-logo-png_seeklogo-316788.png"
+          alt="L Brands"
+          class="brand-logo logo-lbrands"
+        />
+      </div>
+    </div>
+    
+
+    <!-- COPY RIGHT -->
+    <div class="space-y-3 text-lg text-bytomiq-muted">
+      <p class="text-base font-semibold text-slate-100">
+        Experience across industries
+      </p>
+      <p>
+        Experience across Fortune 100 brands, global insurers,
+        national big-box retailers, and high-growth DTC brands. We
+        bring that enterprise-level rigor and pattern recognition
+        into every Bytomiq engagement — whether you’re an emerging
+        brand or operating at scale.
+      </p>
+    </div>
+  </div>
+</div>
+</Section>
+
+
+  <!-- FUTURE PROOF SECTION -->
+  <Section
+    eyebrow="Future-Proof SEO"
+    title="We don't optimize for today. We optimize for every tomorrow."
+    body="Search evolves — algorithms, SERP layouts, AIO/LLMs, user behavior, device contexts. Most SEO is reactive. Bytomiq SEO is engineering-first, predictive, and built for compounding advantage."
+  >
+    <div class="space-y-6 text-sm text-bytomiq-muted max-w-3xl">
+      <p>
+        Every project includes forward-looking architecture: scalable URL mapping, evergreen content frameworks, guardrails for migrations, and systems that keep your site fast, predictable, and indexable as it grows.
+      </p>
+      <p>
+        Our philosophy is simple:
+        <span class="text-slate-100 font-medium">
+          protect what you're building now while engineering for the next phase of your business.
+        </span>
+      </p>
+    </div>
+  </Section>
+
+  <!-- HOW WE WORK -->
+  <Section
+    eyebrow="Our Process"
+    title="A predictable, disciplined SEO workflow"
+    body="We approach SEO like engineering — measurable, transparent, and built around iteration cycles that create compounding results."
+  >
+    <div class="grid gap-10 md:grid-cols-3 text-bytomiq-muted text-sm">
+
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">01 · Diagnose</p>
+        <h3 class="text-slate-100 font-semibold text-base">
+          Deep technical & intent audit
+        </h3>
+        <p>
+          We audit crawlability, indexation, architecture, performance, content gaps, GEO opportunities, and local signals — then build a prioritized roadmap around impact.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">02 · Build</p>
+        <h3 class="text-slate-100 font-semibold text-base">
+          Engineer the system
+        </h3>
+        <p>
+          We implement fixes, rewrite and optimize content, upgrade technical foundations, and create repeatable workflows your team can keep shipping from.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.2em] text-bytomiq-muted">03 · Grow</p>
+        <h3 class="text-slate-100 font-semibold text-base">
+          Ship, analyze, iterate
+        </h3>
+        <p>
+          Month after month we ship improvements, monitor signals, analyze lift, refine content, and keep pushing visibility upward across every SEO discipline.
+        </p>
+      </div>
+
+    </div>
+  </Section>
+
+  <!-- CTA BAND -->
+  <section class="section">
+    <div class="rounded-3xl border border-bytomiq-border bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-emerald-500/10 px-6 py-10 sm:px-10 sm:py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div class="space-y-2">
+          <p class="text-xs uppercase font-semibold tracking-[0.2em] text-bytomiq-muted">
+            Ready to grow?
+          </p>
+          <h2 class="text-xl sm:text-2xl text-slate-100 font-semibold tracking-tight">
+            Want a teardown of your SEO opportunities?
+          </h2>
+          <p class="max-w-lg text-sm text-bytomiq-muted">
+            Send your domain and goals. We’ll break down exact fixes, opportunities, and ranking potential with a strategic roadmap — not a templated SEO pitch.
+          </p>
+        </div>
+
+        <a href="/contact-us" class="btn-primary">Request SEO teardown</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

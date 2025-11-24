@@ -1,16 +1,203 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Bytomiq — Pixel-native SEO & growth">
+  <Hero />
+
+  <Section
+    eyebrow="Capabilities"
+    title="The systems we build"
+    body="Bytomiq is a technical-first SEO & growth studio. We focus on the levers that actually move rankings, revenue, and clarity."
+  >
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card
+        eyebrow="Technical SEO"
+        title="Crawl, index, and performance."
+        body="Site audits, migrations, crawl efficiency, indexing architecture, structured data, Core Web Vitals, and technical systems that scale."
+        kicker="See technical approach"
+        href="/services#technical-seo"
+      />
+
+      <Card
+        eyebrow="Content Systems"
+        title="Intent-mapped content engines."
+        body="Opportunity models, content frameworks, briefs, and governance systems designed to scale without noise or wasted effort."
+        kicker="Explore content systems"
+        href="/services#content-systems"
+      />
+
+      <Card
+        eyebrow="Experimentation"
+        title="Proving what moves the needle."
+        body="Controlled SEO experiments, uplift modeling, and analytics clarity without the dashboard bloat or vanity metrics."
+        kicker="Learn about experiments"
+        href="/services#experiments"
+      />
+    </div>
+  </Section>
+
+<!-- EXPERIENCE / BRANDS SECTION -->
+<Section
+eyebrow="Experience"
+title="Brands we've supported across our careers"
+body="From enterprise organizations to specialized DTC brands, our team has contributed to SEO programs across a wide range of industries."
+>
+<div class="xp-panel reveal-on-scroll">
+  <!-- Tiny “window” header -->
+  <div class="mb-6 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-bytomiq-muted">
+    <span class="flex items-center gap-2">
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+      Client systems
+    </span>
+    <span class="flex items-center gap-1">
+      <span class="h-1.5 w-1.5 rounded-[2px] bg-slate-500/60"></span>
+      <span class="h-1.5 w-1.5 rounded-[2px] bg-slate-500/60"></span>
+      <span class="h-1.5 w-1.5 rounded-[2px] bg-slate-500/60"></span>
+    </span>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-[minmax(0,3fr),minmax(0,2fr)] items-center">
+    <!-- LOGOS LEFT -->
+    <div class="brand-strip">
+      <div class="logo-cell">
+        <img
+          src="/client-logos/Lowes_Companies_Logo.svg.png"
+          alt="Lowe's"
+          class="brand-logo"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/starbucks-coffee-logo.png"
+          alt="Starbucks"
+          class="brand-logo"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/the-north-face-1-logo-black-and-white.png"
+          alt="The North Face"
+          class="brand-logo logo-northface"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/Vans-Logo-PNG-Isolated-HD.png"
+          alt="Vans"
+          class="brand-logo"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/Delve-logo-press-release.png"
+          alt="Delve"
+          class="brand-logo logo-delve"
+        />
+      </div>
+    
+      <div class="logo-cell">
+        <img
+          src="/client-logos/l-brands-logo-png_seeklogo-316788.png"
+          alt="L Brands"
+          class="brand-logo logo-lbrands"
+        />
+      </div>
+    </div>
+    
+
+    <!-- COPY RIGHT -->
+    <div class="space-y-3 text-lg text-bytomiq-muted">
+      <p class="text-base font-semibold text-slate-100">
+        Experience across industries
+      </p>
+      <p>
+        Experience across Fortune 100 brands, global insurers,
+        national big-box retailers, and high-growth DTC brands. We
+        bring that enterprise-level rigor and pattern recognition
+        into every Bytomiq engagement — whether you’re an emerging
+        brand or operating at scale.
+      </p>
+    </div>
+  </div>
+</div>
+</Section>
+
+  <Section
+    eyebrow="Approach"
+    title="Less noise. More signal."
+    body="We plug into your existing team and tooling, then strip away busywork and dashboards that don’t change outcomes."
+  >
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="space-y-2 text-sm text-bytomiq-muted">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-bytomiq-muted">
+          01 · Discover
+        </p>
+        <h3 class="text-base font-semibold text-slate-100">
+          Understand your real constraints
+        </h3>
+        <p>
+          We start with your growth targets, constraints, and existing roadmap—then audit where SEO and content can truly influence them.
+        </p>
+      </div>
+
+      <div class="space-y-2 text-sm text-bytomiq-muted">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-bytomiq-muted">
+          02 · Design
+        </p>
+        <h3 class="text-base font-semibold text-slate-100">
+          Build a focused system
+        </h3>
+        <p>
+          We develop a prioritized plan—technical, content, and experimental—so your team always knows what to ship and why it matters.
+        </p>
+      </div>
+
+      <div class="space-y-2 text-sm text-bytomiq-muted">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-bytomiq-muted">
+          03 · Operate
+        </p>
+        <h3 class="text-base font-semibold text-slate-100">
+          Ship, measure, and iterate
+        </h3>
+        <p>
+          Ship in small, measurable increments and report in plain language so leadership sees impact—not vanity dashboards.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <section class="section">
+    <div class="rounded-3xl border border-bytomiq-border bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-emerald-500/10 px-6 py-8 sm:px-10 sm:py-10">
+      <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div class="space-y-2">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-bytomiq-muted">
+            Next step
+          </p>
+          <h2 class="text-xl font-semibold tracking-tight text-slate-100 sm:text-2xl">
+            Want to see what your SEO could look like in 90 days?
+          </h2>
+          <p class="max-w-xl text-sm text-bytomiq-muted">
+            Share your domain and a bit of context. We’ll return a focused teardown—not a templated sales deck.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href="/contact" class="btn-primary">
+            Request a call
+          </a>
+          <a href="/services" class="btn-ghost">
+            Browse services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

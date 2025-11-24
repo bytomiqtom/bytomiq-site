@@ -1,0 +1,21 @@
+---
+const {
+  title = "",
+  eyebrow = "",
+  body = "",
+  id = "",
+} = Astro.props;
+---
+
+<section id={id} class="section">
+  {eyebrow && <p class="section-title">{eyebrow}</p>}
+
+  {title && <h2 class="section-heading">{title}</h2>}
+
+  {body && <p class="section-body">{body}</p>}
+
+  <!-- Always render the slot; if nothing is passed, it just renders nothing -->
+  <div class="mt-8">
+    <slot />
+  </div>
+</section>

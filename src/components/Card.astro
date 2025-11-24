@@ -1,0 +1,73 @@
+---
+const {
+  eyebrow = "",
+  title = "",
+  body = "",
+  kicker = "",
+  href = "",
+} = Astro.props;
+---
+
+{href ? (
+  <a
+    href={href}
+    class="group relative flex h-full flex-col justify-between rounded-2xl border border-bytomiq-border bg-bytomiq-surface/70 p-6 backdrop-blur transition
+           hover:-translate-y-1 hover:border-cyan-300/70 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
+  >
+    {eyebrow && (
+      <p class="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-bytomiq-muted">
+        {eyebrow}
+      </p>
+    )}
+
+    <div class="space-y-2">
+      {title && (
+        <h3 class="text-lg font-semibold text-slate-100">
+          {title}
+        </h3>
+      )}
+      {body && (
+        <p class="text-sm leading-relaxed text-bytomiq-muted">
+          {body}
+        </p>
+      )}
+    </div>
+
+    {kicker && (
+      <p class="mt-4 flex items-center gap-2 text-xs font-medium text-cyan-300">
+        {kicker}
+        <span class="transition group-hover:translate-x-0.5">→</span>
+      </p>
+    )}
+  </a>
+) : (
+  <div
+    class="group relative flex h-full flex-col justify-between rounded-2xl border border-bytomiq-border bg-bytomiq-surface/70 p-6 backdrop-blur"
+  >
+    {eyebrow && (
+      <p class="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-bytomiq-muted">
+        {eyebrow}
+      </p>
+    )}
+
+    <div class="space-y-2">
+      {title && (
+        <h3 class="text-lg font-semibold text-slate-100">
+          {title}
+        </h3>
+      )}
+      {body && (
+        <p class="text-sm leading-relaxed text-bytomiq-muted">
+          {body}
+        </p>
+      )}
+    </div>
+
+    {kicker && (
+      <p class="mt-4 flex items-center gap-2 text-xs font-medium text-cyan-300">
+        {kicker}
+        <span class="transition group-hover:translate-x-0.5">→</span>
+      </p>
+    )}
+  </div>
+)}
